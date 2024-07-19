@@ -1,3 +1,4 @@
+#Beta 1 version 19/07/2024
 #this sets the working directory to the source file location - nice
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #=================================
