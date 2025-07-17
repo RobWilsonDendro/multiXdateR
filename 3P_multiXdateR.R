@@ -16,14 +16,14 @@ refstart <- "xxx" # start year of reference chronologies if truncated
 refend <- "xxx"   # end year of reference chronologies if truncated
 #=================================
 #read in Tucson file of reference chronologies - they must cover the same period
-referenceRW <- read.rwl ("LGLrwTRUNC", header = FALSE) # RW reference
-referenceEWBI <- read.rwl ("LGLewbiTRUNC", header = FALSE) # EWBI reference
-referenceLWBI <- read.rwl ("LGLlwbiTRUNC", header = FALSE) # LWBI reference
+referenceRW <- read.rwl ("ExampleData/LGLrwTRUNC", header = FALSE) # RW reference
+referenceEWBI <- read.rwl ("ExampleData/LGLewbiTRUNC", header = FALSE) # EWBI reference
+referenceLWBI <- read.rwl ("ExampleData/LGLlwbiTRUNC", header = FALSE) # LWBI reference
 
 #read in Tucson file of undated chronologies/series
-undatedRW <- read.rwl ("LCLrwTRUNC", header = FALSE) # RW undated data
-undatedEWBI <- read.rwl ("LCLewbiTRUNC", header = FALSE) # EWBI undated data
-undatedLWBI <- read.rwl ("LCLlwbiTRUNC", header = FALSE) # LWBI undated data
+undatedRW <- read.rwl ("ExampleData/LCLrwTRUNC", header = FALSE) # RW undated data
+undatedEWBI <- read.rwl ("ExampleData/LCLewbiTRUNC", header = FALSE) # EWBI undated data
+undatedLWBI <- read.rwl ("ExampleData/LCLlwbiTRUNC", header = FALSE) # LWBI undated data
 #===============================
 #minimum overlap between undated and reference chrons
 minoverlap <- 30 #cannot be longer than the length of your undated series
