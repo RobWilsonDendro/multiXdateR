@@ -2,8 +2,13 @@
 #this sets the working directory to the source file location - nice
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #=================================****** call the libraries needed - ensure they are installed
-library(readxl); library(zoo); library(tidyverse); library(ggpubr); library(dplR)
-library(qpcR); library(dplyr); library(ggpubr); library(scales)
+#library(readxl); library(zoo); 
+library(tidyverse); library(ggpubr); library(dplR)
+library(qpcR); 
+library(dplR);
+library(ggpubr);
+library(zoo);
+library(scales);
 #=================================******
 #=================================****** User Settings - lines 8-37 ******
 runtitle <- "Test" #if you want a header for the graphics output
@@ -16,14 +21,14 @@ refstart <- "xxx" # start year of reference chronologies if truncated
 refend <- "xxx"   # end year of reference chronologies if truncated
 #=================================
 #read in Tucson file of reference chronologies - they must cover the same period
-referenceRW <- read.rwl ("ExampleData/LGLrwTRUNC", header = FALSE) # RW reference
-referenceEWBI <- read.rwl ("ExampleData/LGLewbiTRUNC", header = FALSE) # EWBI reference
-referenceLWBI <- read.rwl ("ExampleData/LGLlwbiTRUNC", header = FALSE) # LWBI reference
+referenceRW <- dplR::read.rwl ("ExampleData/LGLrwTRUNC", header = FALSE) # RW reference
+referenceEWBI <- dplR::read.rwl ("ExampleData/LGLewbiTRUNC", header = FALSE) # EWBI reference
+referenceLWBI <- dplR::read.rwl ("ExampleData/LGLlwbiTRUNC", header = FALSE) # LWBI reference
 
 #read in Tucson file of undated chronologies/series
-undatedRW <- read.rwl ("ExampleData/LCLrwTRUNC", header = FALSE) # RW undated data
-undatedEWBI <- read.rwl ("ExampleData/LCLewbiTRUNC", header = FALSE) # EWBI undated data
-undatedLWBI <- read.rwl ("ExampleData/LCLlwbiTRUNC", header = FALSE) # LWBI undated data
+undatedRW <- dplR::read.rwl ("ExampleData/LCLrwTRUNC", header = FALSE) # RW undated data
+undatedEWBI <- dplR::read.rwl ("ExampleData/LCLewbiTRUNC", header = FALSE) # EWBI undated data
+undatedLWBI <- dplR::read.rwl ("ExampleData/LCLlwbiTRUNC", header = FALSE) # LWBI undated data
 #===============================
 #minimum overlap between undated and reference chrons
 minoverlap <- 30 #cannot be longer than the length of your undated series
@@ -38,7 +43,7 @@ correlationtype <- "spearman" # use pearson or spearman
 #=================================******
 #detrending the reference data
 #RW
-RWref.rwi <- detrend(rwl = referenceRW, method = c("Spline"), nyrs = splinewindow, f = 0.5, 
+RWref.rwi <- dplR::detrend(rwl = referenceRW, method = c("Spline"), nyrs = splinewindow, f = 0.5, 
                     pos.slope = TRUE, difference = FALSE) 
 
 #chronology build without variance stabilisation
